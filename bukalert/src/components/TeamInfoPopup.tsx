@@ -1,4 +1,4 @@
-import { EmergencyTeam } from '../lib/supabase'
+import type { EmergencyTeam } from '../lib/supabase'
 import { Phone, Video, Bookmark } from 'lucide-react'
 
 interface TeamInfoPopupProps {

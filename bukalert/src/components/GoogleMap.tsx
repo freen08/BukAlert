@@ -1,6 +1,6 @@
 import { useRef, useEffect, useState } from 'react'
-import { Wrapper, Status } from '@googlemaps/react-wrapper'
-import { EmergencyTeam } from '../lib/supabase'
+import { Wrapper } from '@googlemaps/react-wrapper'
+import type { EmergencyTeam } from '../lib/supabase'
 
 interface GoogleMapProps {
   emergencyTeams: EmergencyTeam[]
@@ -77,9 +77,8 @@ const MapComponent = ({ emergencyTeams, userLocation, onTeamClick }: GoogleMapPr
   return <div ref={mapRef} className="w-full h-full" />
 }
 
-const LoadingComponent = () => <div className="flex items-center justify-center h-full">Loading map...</div>
-
-const ErrorComponent = () => <div className="flex items-center justify-center h-full text-red-500">Error loading map</div>
+// Loading and Error components are not used in this implementation
+// but kept for potential future use
 
 export const GoogleMap = (props: GoogleMapProps) => {
   const apiKey = 'AIzaSyBUV8Ag1aOioVL3SErpMIItjsGAbnE9sR4'

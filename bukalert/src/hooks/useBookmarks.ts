@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
-import { supabase, Bookmark } from '../lib/supabase'
+import type { Bookmark } from '../lib/supabase'
+import { supabase } from '../lib/supabase'
 import { useAuth } from '../contexts/AuthContext'
 
 export const useBookmarks = () => {

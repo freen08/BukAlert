@@ -4,12 +4,12 @@ import { useBookmarks } from '../hooks/useBookmarks'
 import { GoogleMap } from '../components/GoogleMap'
 import { TeamInfoPopup } from '../components/TeamInfoPopup'
 import { DashboardControls } from '../components/DashboardControls'
-import { supabase, EmergencyTeam } from '../lib/supabase'
+import type { EmergencyTeam } from '../lib/supabase'
 import { LogOut } from 'lucide-react'
 
 export const Dashboard = () => {
   const { user, signOut } = useAuth()
-  const { toggleBookmark, isTeamBookmarked, getBookmarkedTeamIds, bookmarks: bookmarkData } = useBookmarks()
+  const { toggleBookmark, isTeamBookmarked, bookmarks: bookmarkData } = useBookmarks()
   const [userLocation, setUserLocation] = useState<google.maps.LatLngLiteral | null>(null)
   const [emergencyTeams, setEmergencyTeams] = useState<EmergencyTeam[]>([])
   const [selectedTeam, setSelectedTeam] = useState<EmergencyTeam | null>(null)
